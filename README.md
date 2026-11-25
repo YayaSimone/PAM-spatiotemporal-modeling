@@ -5,6 +5,8 @@
 **Researcher:** Kenya Montagueo  
 **Status:** Theoretical framework development — not experimentally validated
 
+**Repository:** [PAM-spatiotemporal-modeling](https://github.com/YayaSimone/PAM-spatiotemporal-modeling)
+
 ## Project Overview
 
 Primary amebic meningoencephalitis (PAM) is a rare, rapidly progressive infection of the central nervous system caused by *Naegleria fowleri*.
