@@ -373,4 +373,3 @@ If referencing this repository, please cite:
 
 *Ongoing theoretical research; not peer reviewed or experimentally validated.*
 
-*Ongoing theoretical research; not peer reviewed or experimentally validated.*
