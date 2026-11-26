@@ -11,6 +11,7 @@ The spatial framework described here is proposed rather than computationally imp
 This archival formulation should not be interpreted as the current Phase I implementation, an established biological mechanism, or a clinical predictive tool.
 
 For the revised framework, see [Mathematical Framework](mathematical-framework.md).
+
 ---
 
 ## Project title
