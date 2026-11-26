@@ -55,11 +55,7 @@ $$
 
 The governing system has the autonomous form:
 
-$$
-\frac{d\mathbf{y}}{dt}
-=
-\mathbf{F}(\mathbf{y};\boldsymbol{\theta})
-$$
+$$\frac{d\mathbf{y}}{dt} = \mathbf{F}(\mathbf{y};\boldsymbol{\theta})$$
 
 where $\boldsymbol{\theta}$ denotes the model parameter vector.
 
@@ -72,7 +68,6 @@ The framework represents interactions among five coupled biological processes:
 - Inflammatory recruitment and resolution.
 - Cellular debris accumulation and clearance.
 - BBB injury and recovery.
-
 The implemented formulation is available in [`src/nonspatial_model.py`](../src/nonspatial_model.py).
 
 The original conceptual formulation is preserved separately in [`original-framework.md`](original-framework.md).
