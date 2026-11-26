@@ -1,6 +1,18 @@
-# Original working framework — user-supplied draft
+# Original Working Framework (Archival Draft)
 
-**Provenance:** Supplied by the author in October 2026 and believed by the author to be the most recent version developed around June 2026. Exact original date not verified. This file preserves the model equations and conceptual structure for comparison with later versions.
+**Provenance:** Supplied by the author in October 2026 and believed by the author to be the most recent version developed around June 2026 (exact original date unverified). This file preserves the original model equations and conceptual structure for historical comparison with the later Phase I nonspatial framework described in [mathematical-framework.md](mathematical-framework.md).
+
+## Archival Status
+
+This document preserves an earlier conceptual formulation for historical reference.
+
+The spatial framework described here is proposed rather than computationally implemented or experimentally validated.
+
+This archival formulation should not be interpreted as the current Phase I implementation, an established biological mechanism, or a clinical predictive tool.
+
+For the revised framework, see [Mathematical Framework](mathematical-framework.md).
+
+---
 
 ## Project title
 
