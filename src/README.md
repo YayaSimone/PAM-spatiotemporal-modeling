@@ -1,39 +1,46 @@
-# Computational Source Code
+# Computational Source Documentation
 
 ## Overview
 
-This directory contains the computational implementation
-associated with the Phase I theoretical mathematical framework.
+This directory documents the computational implementation associated with the Phase I theoretical nonspatial mathematical framework.
 
-The current implementation is nonspatial and uses Python
-and scientific computing libraries.
+The local implementation uses Python and scientific computing libraries.
 
-## Scientific Status
+## Source Availability
 
-- Model parameters are hypothetical and empirically uncalibrated.
-- The current implementation has not been experimentally validated.
-- Spatial modeling remains a proposed future extension.
-- Numerical verification does not establish biological validity.
-- No clinical predictions or therapeutic recommendations are claimed.
+Computational source files are preserved in the local research archive, pending final verification.
+
+The current public directory contains supporting documentation rather than an executable implementation.
 
 ## Computational Environment
 
 The previously reviewed local environment used Python 3.13.5.
 
-Dependency versions and installation instructions will be
-documented in the root repository.
+Documented dependency versions are available in [requirements.txt](../requirements.txt).
+
+## Scientific Status
+
+- Model parameters are hypothetical and empirically uncalibrated.
+- Experimental validation has not been performed.
+- Spatial modeling remains a proposed future direction.
+- Numerical verification does not establish biological validity.
+- No clinical predictions or therapeutic recommendations are claimed.
 
 ## Supporting Documentation
 
-- [Mathematical framework](../docs/mathematical-framework.md)
-- [Original working framework](../docs/original-framework.md)
-- [Research questions](../docs/research-questions.md)
-- [Project overview](../README.md)
+- [Mathematical Framework](../docs/mathematical-framework.md)
+- [Original Framework](../docs/original-framework.md)
+- [Research Questions](../docs/research-questions.md)
+- [Numerical Verification](../tests/README.md)
+- [Computational Results](../results/README.md)
+- [Scientific References](../references/README.md)
+- [Project Overview](../README.md)
 
 ## Reproducibility Status
 
-Final repository verification and independent computational
-reproduction remain outstanding.
+Final computational verification and independent reproduction remain outstanding.
+
+Further methodological assessment and scientific development remain pending faculty guidance.
 
 ---
 
