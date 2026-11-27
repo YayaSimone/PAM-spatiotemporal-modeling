@@ -22,11 +22,11 @@ and experimentally unvalidated.
 
 ## Research Objectives
 
-- Develop experience in mathematical biology.
-- Apply scientific computing to theoretical biological systems.
-- Examine mathematical assumptions and numerical consistency.
-- Establish transparent research documentation.
-- Develop a foundation for future faculty-mentored research.
+- Investigate the mathematical consistency of the theoretical framework.
+- Characterize qualitative mathematical behavior within the model.
+- Evaluate numerical consistency across computational methods.
+- Examine modeling assumptions and scientific limitations.
+- Establish transparent and reproducible research documentation.
 
 ## Computational Tools
 
