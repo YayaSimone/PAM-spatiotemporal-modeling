@@ -1,47 +1,95 @@
-# Computational Results
+# Computational Modeling of Spatiotemporal Host–Pathogen Dynamics in Primary Amebic Meningoencephalitis (PAM)
 
-## Overview
+**Independent Computational Biology Research**
 
-This directory documents computational research associated with the Phase I theoretical nonspatial mathematical framework.
+**Researcher:** Kenya S. Montagueo  
+**Research Period:** 2026–Present  
+**Current Phase:** Phase I — Theoretical Nonspatial Framework  
+**Status:** Ongoing Research
 
-## Datasets
+## Research Overview
 
-| File | Contents |
-| --- | --- |
-| `pam_sweep.csv` | 20 simulations over δ ∈ [0.2, 1.5] × λ ∈ [0.2, 1.2]: peak inflammation, crossover onset and duration, pre-clearance window, bound checks. |
-| `pam_threshold_mechanism.csv` | Seven λ values at δ = 0.2, tracing the injury-difference maximum toward the grazing point. |
-| `pam_clearance_recruitment_grid.csv` | Crossover duration across 176 (δ, λ) pairs. |
-| `pam_clearance_recruitment_thresholds.csv` | Root λ*, plus first and second time-derivatives at the root, for δ = 0.15, 0.20, 0.25. |
-| `pam_grazing_scaling.csv`, `pam_scaling_extended.csv`, `pam_small_gap_verification.csv` | Near-threshold crossover duration versus distance to λ*, including the twelve-point fit set. |
-| `pam_scaling_fit_residuals.csv` | Through-origin fit of duration against √(λ* − λ): predicted values, residuals, relative residuals. |
-| `pam_solver_comparison.csv` | LSODA versus DOP853 across solver tolerance settings. |
-| `pam_grazing_verification.csv` | Verification runs at the grazing point. |
+This independent research project explores mathematical modeling and scientific computing in the context of primary amebic meningoencephalitis (PAM).
 
-Scientific figures and research notes are held in the local research archive.
+The current phase focuses on theoretical mathematical formulation, computational documentation, numerical consistency, and reproducibility.
 
-## Scientific Interpretation
+The framework is hypothetical, empirically uncalibrated, and experimentally unvalidated.
 
-The computational observations are conditional on the mathematical assumptions and hypothetical model parameters.
+## Research Objectives
 
-They do not constitute experimental findings, validated biological predictions, or clinical evidence.
+- Investigate the mathematical consistency of the theoretical framework.
+- Characterize qualitative mathematical behavior within the model.
+- Evaluate numerical consistency across computational methods.
+- Examine modeling assumptions and scientific limitations.
+- Establish transparent and reproducible research documentation.
 
-## Reproducibility Status
+## Computational Tools
 
-SHA-256 checksums for every dataset above are recorded in [`SHA256SUMS.txt`](SHA256SUMS.txt), so a file obtained from the author can be confirmed as the file that produced the reported results.
+- Python
+- NumPy
+- SciPy
+- pandas
+- Matplotlib
+- pytest
+- Git and GitHub
 
-File integrity verification does not establish computational reproducibility or scientific validity.
+## Repository Documentation
 
-Publication review and final repository-level verification remain outstanding. Independent computational reproduction has not been established.
+| Directory | Description |
+|---|---|
+| [docs](docs/) | Mathematical framework and research questions |
+| [src](src/) | Computational source documentation |
+| [tests](tests/) | Numerical verification documentation |
+| [results](results/) | Computational research documentation |
+| [references](references/) | Preliminary scientific bibliography |
 
-## Supporting Documentation
+## Research Progress
 
-- [Mathematical framework](../docs/mathematical-framework.md)
-- [Research questions](../docs/research-questions.md)
-- [Numerical verification](../tests/README.md)
-- [Project overview](../README.md)
+### Phase I — Theoretical Framework
+
+- Mathematical framework development
+- Computational exploration
+- Numerical verification exercises
+- Computational datasets and figures
+- Scientific documentation
+
+Original computational materials are preserved in the local research archive.
+
+The public repository currently provides supporting research documentation rather than an executable computational implementation.
+
+Repository-level verification and independent computational reproduction remain outstanding.
+
+### Phase II — Proposed Future Research
+
+Further methodological assessment and scientific development remain pending faculty guidance.
+
+Future work remains subject to scientific mentorship, appropriate validation, and further biological training.
+
+No spatial implementation or experimental validation is claimed in the current phase.
+
+## Scientific Limitations
+
+- Model parameters are hypothetical.
+- Biological calibration has not been performed.
+- Experimental validation has not been established.
+- Independent computational reproduction remains outstanding.
+- The research has not undergone peer review.
+- No clinical predictions or therapeutic recommendations are claimed.
+
+## Researcher
+
+Kenya S. Montagueo
+
+Computer science graduate, U.S. Navy veteran, and aspiring physician-scientist with research interests in computational biology, immunology, infectious diseases, and translational medicine.
+
+Long-term academic objective: MD-PhD training integrating computational and experimental biomedical research.
+
+## Citation
+
+Montagueo, K. S. (2026). Computational Modeling of Spatiotemporal Host–Pathogen Dynamics in Primary Amebic Meningoencephalitis (PAM). Independent computational biology research.
+
+https://github.com/YayaSimone/PAM-spatiotemporal-modeling
 
 ---
 
-*Independent computational biology research by Kenya S. Montagueo.*
-
-*Theoretical research; not peer reviewed or experimentally validated.*
+*Ongoing theoretical research. Not peer reviewed or experimentally validated.*
