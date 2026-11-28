@@ -10,7 +10,7 @@
 
 ## 1. Research Objective
 
-This project investigates theoretical interactions among pathogen burden, neural tissue viability, neuroinflammatory activity, cellular debris accumulation, and blood–brain barrier (BBB) integrity in a mathematical framework motivated by primary amebic meningoencephalitis (PAM).
+This project investigates theoretical mathematical modeling in the context of primary amebic meningoencephalitis (PAM).
 
 The current implementation is a nonspatial system of coupled ordinary differential equations (ODEs).
 
@@ -18,21 +18,9 @@ The framework is hypothetical, empirically uncalibrated, and experimentally unva
 
 ## 2. State Variables
 
-| Symbol | State Variable | Interpretation |
-| --- | --- | --- |
-| $P(t)$ | Pathogen burden | Modeled pathogen abundance |
-| $V(t)$ | Neural tissue viability | Remaining viable neural tissue |
-| $I(t)$ | Neuroinflammatory activity | Composite inflammatory response |
-| $D(t)$ | Cellular debris | Accumulated injury-associated material |
-| $B(t)$ | BBB integrity | Dimensionless barrier integrity index |
+The theoretical framework incorporates five conceptual state variables representing biological processes.
 
-The BBB integrity variable is intended to remain within:
-
-$$
-0 \leq B(t) \leq 1
-$$
-
-The remaining state variables are intended to remain nonnegative.
+The intended state constraints include nonnegativity and interval preservation for normalized quantities.
 
 Operational biological units, normalization conventions, and experimentally calibrated state definitions remain to be established.
 
@@ -40,75 +28,48 @@ Operational biological units, normalization conventions, and experimentally cali
 
 The current nonspatial implementation consists of five coupled ordinary differential equations.
 
-Define the state vector:
-
-$$
-\mathbf{y}(t) =
-\begin{bmatrix}
-P(t) \\
-V(t) \\
-I(t) \\
-D(t) \\
-B(t)
-\end{bmatrix}
-$$
-
 The governing system has the autonomous form:
 
 $$\frac{d\mathbf{y}}{dt} = \mathbf{F}(\mathbf{y};\boldsymbol{\theta})$$
 
-where $\boldsymbol{\theta}$ denotes the model parameter vector.
+where $\mathbf{y}$ denotes the state vector and $\boldsymbol{\theta}$ denotes the model parameter vector.
 
 The autonomous formulation does not explicitly depend on time.
 
-The framework represents interactions among five coupled biological processes:
+This document presents the general mathematical structure and methodological interpretation of the framework. The complete implemented formulation and computational source materials are preserved in the local research archive pending further methodological assessment and faculty guidance.
 
-- Pathogen-associated dynamics.
-- Loss of viable neural tissue.
-- Inflammatory recruitment and resolution.
-- Cellular debris accumulation and clearance.
-- BBB injury and recovery.
-The implemented formulation is available in [`src/nonspatial_model.py`](../src/nonspatial_model.py).
+Public computational source documentation is available in [src/README.md](../src/README.md).
 
-The original conceptual formulation is preserved separately in [`original-framework.md`](original-framework.md).
+The original conceptual formulation is documented separately in [original-framework.md](original-framework.md).
 
 ### 3.1 Modeling Assumptions
 
 - Biological processes are represented through continuous state variables.
 - The current implementation does not explicitly resolve spatial heterogeneity.
-- Neuroinflammatory activity is represented as a composite variable rather than distinct immune-cell populations.
-- Inflammation-associated injury represents an explicit modeling assumption.
+- Composite state variables simplify complex biological processes.
 - Parameter values are hypothetical and empirically uncalibrated.
 - Time is expressed in model units rather than calibrated clinical time.
-- BBB integrity is represented as a downstream model outcome.
+- Biological relationships represented within the framework remain modeling assumptions.
 
 ## 4. Blood–Brain Barrier Formulation
 
 ### 4.1 Original Formulation
 
-The original theoretical framework identified a mathematical consistency issue involving the intended BBB integrity interval.
+The original theoretical framework identified a mathematical consistency issue involving the intended blood–brain barrier (BBB) integrity interval.
 
-The initial formulation did not guarantee that the BBB variable would remain between zero and one.
+The initial formulation did not guarantee that the integrity variable would remain within its intended bounds.
 
 ### 4.2 Revised Formulation
 
-The revised implementation incorporates a state-dependent injury term and a recovery term.
-
-At the lower boundary, the revised formulation permits recovery rather than continued movement into negative integrity values.
-
-At the upper boundary, the formulation does not permit injury-associated terms to increase integrity beyond its intended maximum.
-
-This provides mathematical support for interval preservation under the stated nonnegativity assumptions.
+A revised mathematical formulation was developed to address the identified consistency issue.
 
 Numerical bounds checks provide additional evidence of consistency within the evaluated simulation scenarios.
 
 ### 4.3 Interpretation
 
-The revised BBB formulation represents a mathematical consistency improvement, not an experimentally established biological mechanism.
+The revised formulation represents a mathematical consistency improvement, not an experimentally established biological mechanism.
 
-BBB integrity currently does not explicitly feed back into the other state equations. Consequently, the model does not establish that BBB disruption accelerates pathogen progression or inflammatory injury.
-
-The numerical verification workflow includes a negative-control comparison between the original and revised BBB formulations.
+The numerical verification workflow includes a negative-control comparison between the original and revised formulations.
 
 Under an evaluated stress scenario, the original formulation violated the intended lower integrity bound, whereas the revised formulation remained within the intended interval.
 
@@ -116,35 +77,25 @@ This comparison provides additional evidence supporting the mathematical consist
 
 ## 5. Injury-Dominance Differential
 
-The model distinguishes between pathogen-associated and inflammation-associated contributions to neural tissue injury.
+The theoretical framework considers distinct modeled contributions to tissue injury.
 
-For positive viable neural tissue, their relative contributions can be compared using the injury-dominance differential defined in the computational implementation.
+The computational investigation examines their relative mathematical behavior under hypothetical assumptions.
 
-Positive differential values indicate that the modeled inflammation-associated contribution exceeds the modeled pathogen-associated contribution.
-
-Negative values indicate the reverse relationship.
-
-At zero viable neural tissue, both modeled instantaneous injury contributions vanish.
-
-The contribution of the host immune response to PAM severity remains unresolved in the supporting literature ([Chen and Moseman, 2022](https://doi.org/10.3389/fitd.2022.1082334)).
+The contribution of the host immune response to PAM severity remains unresolved in the supporting literature ([Chen and Moseman, 2023](https://doi.org/10.3389/fitd.2022.1082334)).
 
 Accordingly, inflammation-associated injury represents an explicit modeling assumption rather than an experimentally established biological mechanism.
 
 A crossover within this theoretical system is not evidence that an equivalent biological transition occurs in patients with PAM.
 
-![Injury dominance near the hypothetical threshold](../results/pam_threshold_mechanism.png)
-
-*Figure 1. Injury-dominance trajectories within the selected hypothetical model regime.*
+The supporting scientific figure is preserved in the local research archive and is not currently published in the public repository.
 
 ## 6. Local Nonlinear Model Behavior
 
 ### 6.1 Finite-Time Grazing Interpretation
 
-The numerical evidence is consistent with a local finite-time grazing tangency in the injury-dominance differential.
+The numerical evidence is consistent with a local finite-time grazing tangency within the theoretical framework.
 
-A nondegenerate quadratic tangency requires a zero function value, a stationary point, and nonzero local curvature. These conditions distinguish tangency from an ordinary zero crossing.
-
-A negative second derivative at such a stationary point is consistent with a local maximum.
+In general mathematical analysis, a nondegenerate quadratic tangency is distinguished from an ordinary zero crossing by its local behavior.
 
 The numerical findings support a local mathematical interpretation rather than an exact analytical proof.
 
@@ -152,58 +103,48 @@ The identified behavior should not be classified as a dynamical-system bifurcati
 
 ### 6.2 Asymptotic Square-Root Scaling
 
-Near a nondegenerate quadratic tangency, a transient interval may exhibit square-root scaling with distance from a critical parameter value under appropriate mathematical assumptions.
+Square-root scaling is a recognized mathematical behavior associated with certain nondegenerate quadratic tangencies under appropriate assumptions.
 
 In generic mathematical notation:
 
-$$
-T(\varepsilon) \sim C\sqrt{\varepsilon}
-$$
+$$T(\varepsilon) \sim C\sqrt{\varepsilon}$$
 
 where:
 
-- $T$ represents the interval duration.
+- $T$ represents an interval duration.
 - $\varepsilon$ represents distance from a critical parameter value.
 - $C$ represents a local asymptotic prefactor.
 
 The theoretical leading-order scaling exponent is:
 
-$$
-p = \frac{1}{2}
-$$
-
-The numerical findings are consistent with this local mathematical interpretation.
+$$p = \frac{1}{2}$$
 
 The theoretical asymptotic prefactor and an empirical coefficient obtained from regression over a finite fitting interval are distinct quantities and should not be treated as interchangeable.
 
-![Local grazing scaling](../results/pam_grazing_scaling.png)
-
-*Figure 2. Comparison of numerical interval durations and the local square-root scaling prediction.*
+The supporting scientific figure is preserved in the local research archive and is not currently published in the public repository.
 
 ### 6.3 Residual Analysis
 
-Residual analysis evaluates differences between numerical observations and mathematical scaling predictions.
+Residual analysis evaluates differences between numerical observations and mathematical predictions.
 
 Analytical predictions and fitted regression curves are maintained separately because their residuals represent distinct comparisons.
 
-Systematic residual patterns suggest departures from the leading-order approximation over a finite fitting interval.
+Residual patterns alone do not establish the form or magnitude of higher-order correction terms.
 
-However, residual patterns alone do not establish the form or magnitude of higher-order correction terms.
+Numerical observations do not constitute an analytical proof or biological validation.
 
-The numerical findings are consistent with the proposed local scaling interpretation but do not constitute an analytical proof or biological validation.
-
-Supporting numerical datasets and research notes are maintained in the [results directory](../results/).
+Supporting numerical datasets and research notes are preserved in the local research archive. Public computational results documentation is available in [results/README.md](../results/README.md).
 
 ## 7. Numerical Verification
 
 The computational workflow includes:
 
-- Comparison of LSODA and DOP853 numerical integrators.
+- Numerical integrator comparisons.
 - Evaluation of numerical tolerance sensitivity.
 - State-variable nonnegativity checks.
-- BBB integrity bounds checks.
-- Parameter sensitivity analysis.
-- Local nonlinear scaling analysis.
+- Integrity bounds checks.
+- Computational sensitivity studies.
+- Local nonlinear mathematical analysis.
 - Regression testing.
 - Dataset integrity review.
 
@@ -211,21 +152,13 @@ Numerical verification addresses computational consistency rather than empirical
 
 ### 7.1 State Constraints
 
-The intended state constraints are:
-
-$$
-P,V,I,D \geq 0
-$$
-
-$$
-0 \leq B \leq 1
-$$
+The theoretical framework incorporates intended nonnegativity and interval constraints.
 
 Numerical sampling provides evidence that these constraints are respected within evaluated simulation scenarios.
 
 Sampled numerical checks should not be interpreted as a general mathematical proof of invariance.
 
-The analytical argument for BBB interval preservation and the numerical evidence for state nonnegativity represent different forms of mathematical support.
+Analytical arguments and sampled numerical evidence represent different forms of mathematical support.
 
 ### 7.2 Reproducibility
 
@@ -235,24 +168,23 @@ The project distinguishes between dataset integrity, regression testing, and ind
 | --- | --- |
 | Archived dataset integrity | Previously reviewed using local archived files |
 | Local regression testing | Previously passed in the local review environment |
-| Final repository checksum verification | Pending upload and verification of the final GitHub revision |
-| Final release regression testing | Pending |
+| Repository-level verification | Outstanding |
 | Independent computational reproduction | Not performed |
 | Experimental validation | Not performed |
 
 Local regression tests have previously passed in a Python 3.13.5 review environment.
 
-Archived numerical datasets have undergone checksum and structural review.
+Archived numerical datasets have undergone checksum and structural review. The checksum manifest is preserved in the local research archive.
 
-The archived dataset review and final repository verification concern different verification targets. The earlier local review does not establish that files in the final GitHub revision are identical to the archived files.
+The public repository currently provides research documentation rather than an executable computational implementation.
 
-Final repository verification and independent computational reproduction remain pending.
+Repository-level verification and independent computational reproduction remain outstanding.
 
-These procedures establish different aspects of computational consistency and do not constitute experimental or clinical validation.
+These procedures address different aspects of computational consistency and do not constitute experimental or clinical validation.
 
 ### 7.3 Dataset Integrity and Provenance
 
-Numerical datasets, figures, and associated research notes are maintained separately from the mathematical documentation.
+Numerical datasets, figures, and associated research notes are preserved in the local research archive.
 
 The dataset integrity review distinguishes between:
 
@@ -261,7 +193,7 @@ The dataset integrity review distinguishes between:
 - Numerical consistency.
 - Independent computational reproduction.
 
-A checksum establishes whether file contents match a recorded fingerprint. It does not establish the scientific correctness of the data or demonstrate that the results can be independently reproduced.
+A checksum establishes whether file contents match a recorded fingerprint. It does not independently establish computational reproducibility, data provenance, or scientific validity.
 
 Archived datasets should be preserved without undocumented modifications.
 
@@ -271,15 +203,17 @@ Any intentional changes to dataset contents or column definitions must be docume
 
 The computational implementation uses Python and scientific computing libraries, including:
 
-- NumPy.
-- SciPy.
-- pandas.
-- Matplotlib.
-- pytest.
+- NumPy
+- SciPy
+- pandas
+- Matplotlib
+- pytest
 
 The previously reviewed local environment used Python 3.13.5.
 
-The final repository should document its dependency versions and execution instructions in the root README and requirements file.
+Documented dependency versions are available in [requirements.txt](../requirements.txt).
+
+The dependency file is provided as computational environment documentation. Its availability does not establish that the public repository contains an executable implementation or an independently reproduced computational environment.
 
 Compatibility with other Python versions and operating environments has not been established.
 
@@ -318,17 +252,15 @@ All reported times are expressed in model time units, not hours or days.
 
 ## 9. Proposed Spatial Extension
 
-The original conceptual framework includes a proposed reaction–diffusion extension.
+The original conceptual framework includes a proposed spatial extension.
 
 The current computational implementation is nonspatial.
 
-A future spatial framework would require explicit definitions of spatial coordinates, spatial domains, boundary conditions, transport assumptions, and biological justification.
-
-Spatial coordinates would have dimensions of length but are not implemented in the current framework.
+Further methodological assessment, biological justification, and scientific development remain pending faculty guidance.
 
 No completed spatial PDE implementation, spatial simulation results, or spatially validated predictions are claimed.
 
-The original conceptual framework is maintained separately in [`original-framework.md`](original-framework.md).
+The original conceptual framework is documented separately in [original-framework.md](original-framework.md).
 
 ## 10. Scientific Limitations
 
@@ -354,22 +286,27 @@ No therapeutic recommendations, validated disease predictions, or clinical concl
 | Resource | Description |
 | --- | --- |
 | [Project README](../README.md) | Research overview |
-| [Original framework](original-framework.md) | Initial conceptual formulation |
-| [Research questions](research-questions.md) | Scientific motivation |
-| [Source code](../src/) | Computational implementation |
-| [Numerical results](../results/) | Datasets, figures, and research notes |
-| [Model tests](../tests/) | Numerical verification |
-| [References](../references/README.md) | Supporting scientific literature |
+| [Original Framework](original-framework.md) | Initial conceptual formulation |
+| [Research Questions](research-questions.md) | Scientific motivation |
+| [Computational Source Documentation](../src/README.md) | Implementation documentation |
+| [Computational Results](../results/README.md) | Archived research materials documentation |
+| [Numerical Verification](../tests/README.md) | Verification and regression test documentation |
+| [Scientific References](../references/README.md) | Supporting scientific literature |
 
 ## 12. Citation
 
 If referencing this repository, please cite:
 
-> Montagueo, K. S. (2026). *Computational Modeling of Host–Pathogen Dynamics in Primary Amebic Meningoencephalitis (PAM).* Independent computational biology research.
+Montagueo, K. S. (2026). *Computational Modeling of Spatiotemporal Host–Pathogen Dynamics in Primary Amebic Meningoencephalitis (PAM).* Independent computational biology research.
 
 **Repository:** https://github.com/YayaSimone/PAM-spatiotemporal-modeling
+
+### Version-Specific Citation
+
+When referencing a specific revision of this documentation, include the corresponding Git commit identifier or documentation release tag, when available, together with the access date.
+
+A versioned documentation snapshot identifies a particular repository state. It does not constitute a validated computational software release, independent computational reproduction, or scientific peer review.
 
 ---
 
 *Ongoing theoretical research; not peer reviewed or experimentally validated.*
-
