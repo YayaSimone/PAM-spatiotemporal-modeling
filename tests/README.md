@@ -2,9 +2,7 @@
 
 ## Purpose
 
-This directory documents numerical verification and
-regression testing associated with the Phase I
-theoretical nonspatial mathematical framework.
+This directory documents numerical verification and regression testing associated with the Phase I theoretical nonspatial mathematical framework.
 
 ## Verification Scope
 
@@ -14,12 +12,23 @@ The verification workflow considers:
 - State-variable bounds
 - Boundary-case behavior
 - Regression testing
-- Reproducibility of computational outputs
+- Consistency of computational outputs
+
+## Test Availability
+
+Executable test files, computational outputs, and associated verification materials are preserved in the local research archive.
+
+The public repository currently contains supporting research documentation rather than executable tests.
+
+## Data Integrity and Reproducibility
+
+SHA-256 checksums have been prepared for archived computational datasets to support file integrity verification. The checksum manifest is held in the local research archive alongside the datasets; it is not published in the public repository.
+
+File integrity verification does not independently establish computational reproducibility, data provenance, or scientific validity.
 
 ## Interpretation
 
-Numerical tests evaluate implementation behavior
-under specified assumptions and sampled conditions.
+Numerical tests evaluate implementation behavior under specified assumptions and sampled conditions.
 
 Successful numerical tests do not establish:
 
@@ -30,22 +39,20 @@ Successful numerical tests do not establish:
 
 ## Verification Status
 
-The original archived tests are preserved locally.
-
 Final repository-level verification remains pending.
-Independent computational reproduction has not
-been established.
+
+Independent computational reproduction by a third party has not been established.
 
 ## Supporting Documentation
 
-- [Mathematical framework](../docs/mathematical-framework.md)
-- [Source code documentation](../src/README.md)
-- [Project overview](../README.md)
+- [Mathematical Framework](../docs/mathematical-framework.md)
+- [Computational Source Documentation](../src/README.md)
+- [Computational Results](../results/README.md)
+- [Scientific References](../references/README.md)
+- [Project Overview](../README.md)
 
 ---
 
-*Independent computational biology research
-by Kenya S. Montagueo.*
+*Independent computational biology research by Kenya S. Montagueo.*
 
-*Theoretical research; not peer reviewed or
-experimentally validated.*
+*Ongoing theoretical research; not peer reviewed or experimentally validated.*
