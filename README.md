@@ -58,8 +58,7 @@ and experimentally unvalidated.
 - Computational datasets and figures
 - Scientific documentation
 
-Original computational materials are preserved locally.
-Final repository-level verification remains outstanding.
+Original computational materials are preserved in the local research archive. The public repository currently provides supporting research documentation rather than an executable computational implementation. Final repository-level verification remains outstanding.
 
 ### Phase II — Proposed Future Research
 
